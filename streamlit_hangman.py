@@ -47,13 +47,18 @@ def HangMan():
     st.markdown(
     f"""
     <br>
-        Where boats unload their cargo + the instrument used in the Indonesian gamelan orchestra.
+        `Where boats unload their cargo` + `the instrument used in the Indonesian gamelan orchestra`
     <br>
     """,
     unsafe_allow_html=True,
     )
 
     show_answer = b_show_answer.button("🔍 Show Answer 🔭")
+
+    holder1, holder2, holder3 = st.empty(), st.empty(), st.empty()
+    user_letter = holder1.text_input(
+        "Guess a letter:", max_chars=1, key=str(hm.hm_idxml_key + 1)
+    ).upper()
 
     st.markdown(
         f"""
@@ -64,11 +69,6 @@ def HangMan():
         """,
         unsafe_allow_html=True,
     )
-    holder1, holder2, holder3 = st.empty(), st.empty(), st.empty()
-    user_letter = holder1.text_input(
-        "Guess a letter:", max_chars=1, key=str(hm.hm_idxml_key + 1)
-    ).upper()
-
     if (
         len(hm.hm_word_letters) > 0 and user_letter != ""
     ) and hm.hm_word:
@@ -97,6 +97,7 @@ def HangMan():
                 f"\nCongratulations! You guessed the word [{hm.hm_word}] correctly!!"
             )
             st.balloons()
+            st.write('https://share.streamlit.io/kenfus/hangman-two/streamlit_hangman.py')
 
         else:
             holder3.error("Game over! Try again!")
