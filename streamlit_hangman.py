@@ -50,7 +50,7 @@ def HangMan():
             The hidden word is made up of 20 letters and numbers. Thus, it has  (26 + 10) ** 20 = 1.33674945 x 10^31 possible combinations. Because you can feedback per letter, you will need (in the worst case) 20 * 36 trys to guess the word.
             If you make one guess every 5 second, it will take you 20 * 36 * 5 / 60 = 1 hour to guess the word.
             Maybe there is another way to figure this out? 
-
+        
             Hint: After applying the sha256 algorithm, the hidden word is as following:
             700C2FF3575E9B09E7342BF6E5C5144DE16D20D4EB3A8E1766C9C9A38A7CE138
 
